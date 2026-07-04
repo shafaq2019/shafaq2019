@@ -1,0 +1,53 @@
+## Process Mapping — Student Admission Process
+Week 1 project — AI Workflow Analyst roadmap
+ Overview
+
+This project documents a real-world business process — a school's student admission cycle — as a professional flowchart, following standard process-mapping conventions (BPMN-style shapes).
+
+[Student Admission Process]
+
+https://lucid.app/lucidchart/b159613f-bb6a-413d-8f5a-88822297d7da/edit?invitationId=inv_a49381b4-68f5-48a0-96a3-b0b5f11ec4fb
+
+The Process
+
+1. **Start:** Admission cycle opens
+2. Design admission requirements for students
+3. Publish admission ad on social media
+4. **Decision:** Screening passed? → No → Rejected
+5. Conduct admission test
+6. **Decision:** Test result? → Fail → Reattempt test (loops back) / Pass → continue
+7. Call for interview
+8. **Decision:** Interview result? → Fail → Rejected / Pass → **Student Enrolled**
+
+Tools Used
+
+- **Lucidchart / Lucidspark** — primary diagramming tool
+- **diagrams.net (draw.io)** — free alternative, explored for comparison
+
+Shape Conventions Applied
+
+| Shape | Meaning | Example |
+|-------|---------|---------|
+| Oval | Start / End (terminator) | "Student Enrolled", "Rejected" |
+| Rectangle | Action / process step | "Conduct admission test" |
+| Diamond | Decision (always a question) | "Test result?" |
+| Arrow | Flow direction, labeled Yes/No/Pass/Fail | — |
+
+Key Learnings
+
+- Every decision point must be an explicit diamond with a question — decisions hidden on arrow labels break process clarity and downstream automation
+- The action → decision pattern: a rectangle performs a step, the following diamond evaluates its *result*
+- "No/Fail" branches must resolve somewhere — either loop back into the flow or reach an end terminator; dead ends are logic bugs
+- End terminators (like "Rejected") only receive arrows; nothing flows out of them
+
+Known Improvements (Next Iteration)
+
+- The reattempt loop is currently uncapped — a production version would limit attempts (e.g., "Fail — 2nd attempt → Rejected")
+- Add a "Receive applications" step between publishing the ad and screening
+- Identify AI/automation opportunities: auto-screening applications, automated test-result notifications, interview scheduling bots
+
+About Me
+
+Data Analyst transitioning into AI Workflow Analysis and Agentic AI. Skills: SQL, Power BI, Python (Pandas, NumPy), and 8 years of education-sector domain expertise.
+
+*Part of my public learning journey — Week 1 of a 4-week AI Workflow Analyst roadmap.*
